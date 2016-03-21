@@ -1,10 +1,9 @@
 def application(environ, start_response):
 	#
 	body=''
-	if environ['QUERY_STRING']:
-		a=environ['QUERY_STRING'].split('&')
-		for i in a:
-			body+=i+'\n'
+	a=environ['QUERY_STRING'].split('&')
+	for i in a:
+		body+=i+'\r\n'
 	#
 	status = '200 OK'
 	headers = [('Content-Type', 'text/plain')]
